@@ -22,6 +22,12 @@ Depois abra:
 http://127.0.0.1:8000
 ```
 
+Painel administrativo:
+
+```text
+http://127.0.0.1:8000/admin
+```
+
 ## Como publicar online
 
 Este projeto precisa de hospedagem Python porque o painel admin e os leads usam backend com SQLite. Netlify/Vercel estatico nao rodam esse servidor diretamente.
@@ -41,6 +47,7 @@ O arquivo `render.yaml` ja deixa essa configuracao pronta para deploy por bluepr
 ## O que a aplicacao faz
 
 - Serve a landing page em `index.html`
+- Separa o painel admin na rota `/admin`
 - Salva conteudo da academia no arquivo SQLite `world_fitness.db`
 - Salva leads enviados pelo formulario
 - Faz login do admin no servidor com sessao em cookie `HttpOnly`
