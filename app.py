@@ -311,7 +311,7 @@ class AppHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         parsed = urlparse(self.path)
 
-        if parsed.path == "/" or parsed.path == "/index.html":
+        if parsed.path in {"/", "/index.html", "/admin"}:
             return self.serve_index()
         if parsed.path == "/api/public-data":
             return self.send_json(HTTPStatus.OK, read_site_data(include_leads=False))
