@@ -1148,7 +1148,6 @@
           </div>
           <div class="nav-actions">
             <a class="btn btn-primary" id="header-whatsapp" href="https://wa.me/5531993262334" target="_blank" rel="noreferrer">WhatsApp</a>
-            <button class="btn btn-secondary" id="open-admin" type="button">Admin</button>
           </div>
         </div>
       </nav>
@@ -2006,7 +2005,9 @@
       });
     });
 
-    openAdminButton.addEventListener("click", openAdmin);
+    if (openAdminButton) {
+      openAdminButton.addEventListener("click", openAdmin);
+    }
     closeAdminButton.addEventListener("click", closeAdmin);
 
     adminModal.addEventListener("click", function (event) {
@@ -2227,6 +2228,10 @@
 
       await refreshSession();
       renderAll();
+
+      if (window.location.pathname === "/admin") {
+        openAdmin();
+      }
     }
 
     bootstrap();
