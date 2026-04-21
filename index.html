@@ -1383,6 +1383,7 @@
             <button class="btn btn-secondary" id="logout-admin" type="button">Sair</button>
           </div>
         </div>
+        <div id="admin-save-message" aria-live="polite"></div>
 
         <div class="dashboard-grid">
           <div class="panel span-8">
@@ -1610,6 +1611,7 @@
     const resetDataButton = document.getElementById("reset-data");
     const leadForm = document.getElementById("lead-form");
     const leadMessage = document.getElementById("lead-message");
+    const adminSaveMessage = document.getElementById("admin-save-message");
     const featureForm = document.getElementById("feature-form");
     const planForm = document.getElementById("plan-form");
     const testimonialForm = document.getElementById("testimonial-form");
@@ -1956,23 +1958,42 @@
       }
     }
 
-    function queueSave() {
-      if (!adminLogged) return;
-      if (saveTimer) window.clearTimeout(saveTimer);
-      saveTimer = window.setTimeout(async function () {
-        try {
-          const payload = await fetchJson("/api/admin/save", {
-            method: "POST",
-            body: JSON.stringify(getContentPayload())
-          });
-          updateLocalData(payload);
-        } catch (error) {
-          if (!loadErrorShown) {
-            loadErrorShown = true;
-            window.alert("Nao foi possivel salvar no servidor: " + error.message);
-          }
+    async function saveAdminData(showSuccess) {
+      if (!adminLogged) {
+        setMessage(adminSaveMessage, "Entre novamente no admin para salvar alteracoes.", "error");
+        return false;
+      }
+
+      setMessage(adminSaveMessage, "Salvando alteracoes...", "success");
+
+      try {
+        const payload = await fetchJson("/api/admin/save", {
+          method: "POST",
+          body: JSON.stringify(getContentPayload())
+        });
+        updateLocalData(payload);
+        if (showSuccess) {
+          setMessage(adminSaveMessage, "Alteracoes salvas com sucesso.", "success");
+        } else {
+          setMessage(adminSaveMessage, "", "success");
         }
-      }, 450);
+        loadErrorShown = false;
+        return true;
+      } catch (error) {
+        setMessage(adminSaveMessage, "Nao foi possivel salvar: " + error.message, "error");
+        if (!loadErrorShown) {
+          loadErrorShown = true;
+          window.alert("Nao foi possivel salvar no servidor: " + error.message);
+        }
+        return false;
+      }
+    }
+
+    function queueSave() {
+      if (saveTimer) window.clearTimeout(saveTimer);
+      saveTimer = window.setTimeout(function () {
+        saveAdminData(false);
+      }, 700);
     }
 
     function exportData() {
@@ -2120,17 +2141,17 @@
       queueSave();
     });
 
-    featureForm.addEventListener("submit", function (event) {
+    featureForm.addEventListener("submit", async function (event) {
       event.preventDefault();
       const feature = String(new FormData(featureForm).get("feature") || "").trim();
       if (!feature) return;
       data.features.push(feature);
       renderAll();
-      queueSave();
+      await saveAdminData(true);
       featureForm.reset();
     });
 
-    planForm.addEventListener("submit", function (event) {
+    planForm.addEventListener("submit", async function (event) {
       event.preventDefault();
       const formData = new FormData(planForm);
       const name = String(formData.get("name") || "").trim();
@@ -2138,7 +2159,10 @@
       const desc = String(formData.get("desc") || "").trim();
       const highlight = String(formData.get("highlight")) === "true";
 
-      if (!name || !price) return;
+      if (!name || !price) {
+        setMessage(adminSaveMessage, "Preencha pelo menos nome e preco do plano.", "error");
+        return;
+      }
 
       data.plans.push({
         id: Date.now(),
@@ -2149,12 +2173,13 @@
       });
 
       renderAll();
-      queueSave();
+      const saved = await saveAdminData(true);
+      if (!saved) return;
       planForm.reset();
       planForm.elements.highlight.value = "false";
     });
 
-    testimonialForm.addEventListener("submit", function (event) {
+    testimonialForm.addEventListener("submit", async function (event) {
       event.preventDefault();
       const formData = new FormData(testimonialForm);
       const name = String(formData.get("name") || "").trim();
@@ -2173,13 +2198,13 @@
       });
 
       renderAll();
-      queueSave();
+      await saveAdminData(true);
       testimonialForm.reset();
       testimonialForm.elements.stars.value = "5";
       testimonialForm.elements.when.value = "agora";
     });
 
-    document.addEventListener("click", function (event) {
+    document.addEventListener("click", async function (event) {
       const featureIndex = event.target.closest("[data-remove-feature]");
       const planButton = event.target.closest("[data-remove-plan]");
       const testimonialButton = event.target.closest("[data-remove-testimonial]");
@@ -2187,7 +2212,7 @@
       if (featureIndex) {
         data.features.splice(Number(featureIndex.dataset.removeFeature), 1);
         renderAll();
-        queueSave();
+        await saveAdminData(true);
       }
 
       if (planButton) {
@@ -2195,7 +2220,7 @@
           return String(plan.id) !== planButton.dataset.removePlan;
         });
         renderAll();
-        queueSave();
+        await saveAdminData(true);
       }
 
       if (testimonialButton) {
@@ -2203,7 +2228,7 @@
           return String(item.id) !== testimonialButton.dataset.removeTestimonial;
         });
         renderAll();
-        queueSave();
+        await saveAdminData(true);
       }
     });
 
