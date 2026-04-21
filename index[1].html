@@ -1,0 +1,2235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Academia World Fitness BH em Vespasiano: estrutura completa, bons profissionais, ambiente acolhedor e planos acessiveis para sua evolucao."
+  />
+  <title>World Fitness BH | Academia em Vespasiano</title>
+  <style>
+    :root {
+      --bg: #070b11;
+      --bg-soft: #101723;
+      --panel: rgba(16, 23, 35, 0.82);
+      --panel-strong: rgba(8, 12, 20, 0.94);
+      --line: rgba(255, 255, 255, 0.08);
+      --line-strong: rgba(111, 255, 181, 0.22);
+      --text: #f4f8fb;
+      --muted: #9daaba;
+      --accent: #71ffb3;
+      --accent-strong: #34db8f;
+      --accent-alt: #f8d56a;
+      --danger: #ff7f92;
+      --shadow: 0 28px 70px rgba(0, 0, 0, 0.35);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 14px;
+      --pill: 999px;
+      --max-width: 1180px;
+      --font-display: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      --font-body: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: var(--font-body);
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 15%, rgba(52, 219, 143, 0.16), transparent 24%),
+        radial-gradient(circle at 85% 18%, rgba(248, 213, 106, 0.12), transparent 18%),
+        radial-gradient(circle at 80% 80%, rgba(113, 255, 179, 0.11), transparent 22%),
+        linear-gradient(180deg, #05070b 0%, #080d14 42%, #05070b 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 82px 82px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.65), transparent 82%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    button {
+      border: 0;
+      background: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section {
+      position: relative;
+      padding: 88px 0;
+    }
+
+    .section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: min(var(--max-width), calc(100% - 32px));
+      transform: translateX(-50%);
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .section-title {
+      max-width: 760px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .section-title .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 8px 14px;
+      border-radius: var(--pill);
+      border: 1px solid rgba(113, 255, 179, 0.2);
+      background: rgba(113, 255, 179, 0.08);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .section-title h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(6, 10, 16, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(22px);
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 84px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: #061109;
+      background: linear-gradient(135deg, var(--accent) 0%, #a3ffd0 100%);
+      box-shadow: 0 18px 35px rgba(52, 219, 143, 0.25);
+    }
+
+    .brand-copy {
+      min-width: 0;
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-size: 1.05rem;
+      line-height: 1.15;
+    }
+
+    .brand-copy span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+    }
+
+    .nav-menu a {
+      position: relative;
+      font-size: 0.95rem;
+    }
+
+    .nav-menu a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.2s ease;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a:focus-visible {
+      color: var(--text);
+    }
+
+    .nav-menu a:hover::after,
+    .nav-menu a:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 999px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      content: "";
+    }
+
+    .menu-toggle span::before {
+      transform: translateY(-6px);
+    }
+
+    .menu-toggle span::after {
+      transform: translateY(4px);
+    }
+
+    .menu-toggle[aria-expanded="true"] span {
+      background: transparent;
+    }
+
+    .menu-toggle[aria-expanded="true"] span::before {
+      transform: translateY(0) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] span::after {
+      transform: translateY(-2px) rotate(-45deg);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: var(--pill);
+      font-weight: 800;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #061109;
+      background: linear-gradient(135deg, var(--accent), #c6ffe2);
+      box-shadow: 0 18px 36px rgba(52, 219, 143, 0.22);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      box-shadow: 0 20px 42px rgba(52, 219, 143, 0.3);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--line);
+      color: var(--text);
+    }
+
+    .btn-ghost {
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .hero {
+      padding: 52px 0 44px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero-copy .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding: 10px 16px;
+      border-radius: var(--pill);
+      border: 1px solid rgba(113, 255, 179, 0.18);
+      background: rgba(113, 255, 179, 0.08);
+      color: var(--accent);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .hero-copy h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 6vw, 5.4rem);
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+      max-width: 12ch;
+    }
+
+    .hero-copy p {
+      margin-top: 20px;
+      max-width: 600px;
+      color: #d2dbe5;
+      font-size: 1.08rem;
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .hero-note {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero-note span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+        linear-gradient(145deg, rgba(113, 255, 179, 0.12), rgba(248, 213, 106, 0.05));
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -20% 72% 30%;
+      height: 160px;
+      background: radial-gradient(circle, rgba(113, 255, 179, 0.22), transparent 70%);
+      pointer-events: none;
+    }
+
+    .rating-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .rating-line .score {
+      font-size: 3.2rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .stars {
+      display: inline-flex;
+      gap: 4px;
+      color: var(--accent-alt);
+    }
+
+    .stars span {
+      font-size: 1rem;
+    }
+
+    .review-chip {
+      padding: 14px 16px;
+      border-radius: 20px;
+      background: rgba(248, 213, 106, 0.12);
+      border: 1px solid rgba(248, 213, 106, 0.15);
+      text-align: right;
+    }
+
+    .review-chip strong {
+      display: block;
+      font-size: 1.4rem;
+    }
+
+    .detail-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .detail-item {
+      display: grid;
+      grid-template-columns: 46px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+      padding: 16px;
+      border-radius: 22px;
+      background: rgba(0, 0, 0, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .detail-item .icon {
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      color: var(--accent);
+      background: rgba(113, 255, 179, 0.08);
+      font-size: 1.15rem;
+    }
+
+    .detail-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+
+    .detail-item p {
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .stats-grid,
+    .feature-grid,
+    .plan-grid,
+    .testimonial-grid,
+    .contact-grid,
+    .dashboard-grid,
+    .lead-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 16px;
+    }
+
+    .stat-card,
+    .feature-card,
+    .plan-card,
+    .testimonial-card,
+    .panel,
+    .lead-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .stat-card,
+    .feature-card {
+      padding: 24px;
+    }
+
+    .stat-card strong {
+      display: block;
+      margin-top: 12px;
+      font-size: 1.1rem;
+    }
+
+    .stat-card p,
+    .feature-card p,
+    .testimonial-card p,
+    .plan-card p,
+    .mini-text,
+    .lead-card p,
+    .empty-state {
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .feature-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .feature-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 168px;
+    }
+
+    .feature-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -20px -24px auto;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(113, 255, 179, 0.12), transparent 72%);
+      pointer-events: none;
+    }
+
+    .feature-icon {
+      display: inline-grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      margin-bottom: 18px;
+      border-radius: 18px;
+      background: rgba(113, 255, 179, 0.1);
+      color: var(--accent);
+      font-size: 1.2rem;
+    }
+
+    .plan-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .plan-card {
+      position: relative;
+      padding: 28px;
+    }
+
+    .plan-card.popular {
+      border-color: rgba(113, 255, 179, 0.25);
+      background:
+        linear-gradient(180deg, rgba(113, 255, 179, 0.12), rgba(16, 23, 35, 0.86)),
+        var(--panel);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 12px;
+      border-radius: var(--pill);
+      border: 1px solid rgba(113, 255, 179, 0.16);
+      background: rgba(113, 255, 179, 0.08);
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .plan-card h3 {
+      margin-top: 18px;
+      font-size: 1.5rem;
+    }
+
+    .price {
+      margin-top: 16px;
+      color: var(--accent-alt);
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin: 22px 0 28px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #d4dde7;
+      line-height: 1.5;
+    }
+
+    .feature-list li::before {
+      content: "•";
+      color: var(--accent);
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .testimonial-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .testimonial-card {
+      padding: 24px;
+    }
+
+    .testimonial-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .testimonial-card strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .contact-grid {
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+      align-items: start;
+    }
+
+    .panel {
+      padding: 28px;
+    }
+
+    .panel h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .field-grid {
+      display: grid;
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 8px;
+      color: #d0d7df;
+      font-size: 0.94rem;
+      font-weight: 600;
+    }
+
+    .field input,
+    .field textarea,
+    .field select,
+    .search-input {
+      width: 100%;
+      min-height: 54px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      background: rgba(0, 0, 0, 0.24);
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .field textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus,
+    .search-input:focus {
+      border-color: rgba(113, 255, 179, 0.35);
+      background: rgba(0, 0, 0, 0.34);
+    }
+
+    .message {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    .message.success {
+      color: #cff8df;
+      border: 1px solid rgba(113, 255, 179, 0.18);
+      background: rgba(113, 255, 179, 0.08);
+    }
+
+    .message.error {
+      color: #ffd5dc;
+      border: 1px solid rgba(255, 127, 146, 0.2);
+      background: rgba(255, 127, 146, 0.08);
+    }
+
+    .contact-points {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      margin: 22px 0 28px;
+    }
+
+    .contact-points li {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+      color: var(--muted);
+    }
+
+    .contact-points .icon {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: rgba(113, 255, 179, 0.1);
+      color: var(--accent);
+    }
+
+    .cta-strip {
+      margin-top: 24px;
+      padding: 20px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(113, 255, 179, 0.08), rgba(248, 213, 106, 0.08));
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .site-footer {
+      padding: 36px 0 52px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .site-footer strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--text);
+      font-size: 1.05rem;
+    }
+
+    .admin-modal[hidden] {
+      display: none;
+    }
+
+    .admin-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.76);
+      backdrop-filter: blur(10px);
+    }
+
+    .admin-dialog {
+      width: min(1260px, 100%);
+      max-height: min(92vh, 980px);
+      overflow: auto;
+      border-radius: 34px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background:
+        radial-gradient(circle at top, rgba(113, 255, 179, 0.09), transparent 30%),
+        linear-gradient(180deg, rgba(12, 18, 28, 0.98), rgba(7, 11, 18, 0.98));
+      box-shadow: 0 36px 80px rgba(0, 0, 0, 0.55);
+      padding: 28px;
+    }
+
+    .admin-head {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .admin-head p {
+      color: var(--muted);
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+
+    .admin-head .eyebrow {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .login-shell {
+      max-width: 430px;
+      margin: 28px auto 8px;
+    }
+
+    .login-shell .panel {
+      padding: 32px;
+      text-align: center;
+    }
+
+    .login-badge {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 20px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      background: rgba(113, 255, 179, 0.1);
+      color: var(--accent);
+      font-size: 1.5rem;
+    }
+
+    .dashboard-grid {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+
+    .span-4 { grid-column: span 4; }
+    .span-5 { grid-column: span 5; }
+    .span-6 { grid-column: span 6; }
+    .span-7 { grid-column: span 7; }
+    .span-8 { grid-column: span 8; }
+    .span-12 { grid-column: span 12; }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .panel-header h4 {
+      font-size: 1.2rem;
+    }
+
+    .stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .list-item {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .list-item strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .list-item p {
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .list-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .icon-btn {
+      display: inline-grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .icon-btn.danger {
+      color: #ffc8d1;
+      border-color: rgba(255, 127, 146, 0.16);
+      background: rgba(255, 127, 146, 0.08);
+    }
+
+    .inline-grid {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .toolbar-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .lead-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .lead-card {
+      padding: 20px;
+    }
+
+    .lead-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .lead-card .meta {
+      margin-top: 14px;
+      color: #768497;
+      font-size: 0.85rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 12px;
+      border-radius: var(--pill);
+      background: rgba(255, 255, 255, 0.05);
+      color: #d5dde6;
+      font-size: 0.83rem;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .contact-grid,
+      .stats-grid,
+      .feature-grid,
+      .plan-grid,
+      .testimonial-grid,
+      .lead-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dashboard-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .span-4,
+      .span-5,
+      .span-6,
+      .span-7,
+      .span-8,
+      .span-12 {
+        grid-column: span 1;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .site-nav {
+        min-height: 76px;
+      }
+
+      .menu-toggle {
+        display: inline-grid;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 16px;
+        right: 16px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        padding: 18px;
+        border-radius: 24px;
+        background: rgba(10, 15, 23, 0.96);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.is-open {
+        display: flex;
+      }
+
+      .nav-menu,
+      .nav-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-menu a::after {
+        display: none;
+      }
+
+      .stats-grid,
+      .feature-grid,
+      .plan-grid,
+      .testimonial-grid,
+      .inline-grid,
+      .lead-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .admin-dialog {
+        padding: 22px;
+      }
+
+      .admin-head {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero {
+        padding-top: 32px;
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .hero-card,
+      .panel,
+      .plan-card,
+      .feature-card,
+      .stat-card,
+      .testimonial-card,
+      .lead-card {
+        padding: 22px;
+      }
+
+      .rating-line {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-actions,
+      .toolbar,
+      .toolbar-actions,
+      .hero-note {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn,
+      .btn-ghost {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="site-nav" aria-label="Principal">
+        <a class="brand" href="#inicio">
+          <span class="brand-mark">WF</span>
+          <span class="brand-copy">
+            <strong id="brand-name">World Fitness BH</strong>
+            <span>Fitness • Saude • Resultado</span>
+          </span>
+        </a>
+
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menu">
+          <span></span>
+        </button>
+
+        <div class="nav-links" id="nav-links">
+          <div class="nav-menu">
+            <a href="#sobre">Sobre</a>
+            <a href="#planos">Planos</a>
+            <a href="#avaliacoes">Avaliacoes</a>
+            <a href="#contato">Contato</a>
+          </div>
+          <div class="nav-actions">
+            <a class="btn btn-primary" id="header-whatsapp" href="https://wa.me/5531993262334" target="_blank" rel="noreferrer">WhatsApp</a>
+            <button class="btn btn-secondary" id="open-admin" type="button">Admin</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="pill">Academia bem avaliada na regiao</div>
+            <h1 id="hero-title">A academia certa para seu foco, sua saude e sua evolucao.</h1>
+            <p id="hero-subtitle">
+              Treine em um ambiente acolhedor, com bons profissionais, varios equipamentos e atendimento que faz diferenca no seu resultado.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" id="hero-cta" href="https://wa.me/5531993262334" target="_blank" rel="noreferrer">Agende sua visita</a>
+              <a class="btn btn-secondary" href="#planos">Ver planos</a>
+            </div>
+            <div class="hero-note">
+              <span>⭐ Bons profissionais</span>
+              <span>🏋 Estrutura funcional</span>
+              <span>📍 Vespasiano - MG</span>
+            </div>
+          </div>
+
+          <aside class="hero-card" aria-label="Resumo da academia">
+            <div class="rating-line">
+              <div>
+                <div class="mini-text">Google Reviews</div>
+                <div class="score" id="rating-score">4,6</div>
+                <div class="stars" aria-hidden="true">
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                </div>
+              </div>
+              <div class="review-chip">
+                <span class="mini-text">Avaliacoes</span>
+                <strong id="reviews-count">156</strong>
+              </div>
+            </div>
+
+            <div class="detail-list">
+              <div class="detail-item">
+                <div class="icon">📍</div>
+                <div>
+                  <strong>Endereco</strong>
+                  <p id="academy-address">R. Jose Alves, 300 - Jardim dos Comerciarios, Vespasiano - MG, 33200-000</p>
+                </div>
+              </div>
+              <div class="detail-item">
+                <div class="icon">📞</div>
+                <div>
+                  <strong>Telefone</strong>
+                  <p id="academy-phone">(31) 99326-2334</p>
+                </div>
+              </div>
+              <div class="detail-item">
+                <div class="icon">⏰</div>
+                <div>
+                  <strong>Horario</strong>
+                  <p id="academy-status">Aberto • Fecha 23:00</p>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="stats-grid" id="stats-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Sobre a academia</span>
+          <h2>Treino com estrutura, atendimento e motivacao</h2>
+          <p id="about-text">
+            A World Fitness BH e uma academia voltada para quem quer treinar com seriedade, conforto e motivacao. Nosso espaco foi pensado para oferecer uma rotina mais saudavel, com estrutura funcional, equipamentos e acompanhamento proximo.
+          </p>
+        </div>
+
+        <div class="feature-grid" id="feature-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="planos">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Planos</span>
+          <h2>Escolha o plano ideal para sua rotina</h2>
+          <p>Condicoes pensadas para quem quer constancia, resultado e uma academia acessivel no dia a dia.</p>
+        </div>
+
+        <div class="plan-grid" id="plan-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="avaliacoes">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Avaliacoes</span>
+          <h2>O que alunos e visitantes comentam</h2>
+          <p>Percepcoes recorrentes sobre ambiente, atendimento, equipamentos e acompanhamento profissional.</p>
+        </div>
+
+        <div class="testimonial-grid" id="testimonial-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="contato">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="panel">
+            <h3>Peca informacoes ou agende uma visita</h3>
+            <p class="mini-text">
+              Envie seus dados e o contato fica salvo no painel administrativo. Se quiser, o WhatsApp tambem abre na hora para acelerar seu atendimento.
+            </p>
+
+            <form id="lead-form" class="field-grid">
+              <div class="field">
+                <label for="lead-name">Seu nome</label>
+                <input id="lead-name" name="name" type="text" placeholder="Digite seu nome" required />
+              </div>
+              <div class="field">
+                <label for="lead-phone">WhatsApp</label>
+                <input id="lead-phone" name="phone" type="tel" placeholder="(31) 99999-9999" required />
+              </div>
+              <div class="field">
+                <label for="lead-goal">Objetivo</label>
+                <textarea id="lead-goal" name="goal" placeholder="Ex: emagrecimento, hipertrofia, voltar a treinar"></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit">Enviar contato</button>
+            </form>
+
+            <div id="lead-message" aria-live="polite"></div>
+          </div>
+
+          <div class="panel">
+            <h3>Atendimento rapido</h3>
+            <p class="mini-text">
+              Chame direto no WhatsApp para receber informacoes, tirar duvidas sobre planos e combinar sua primeira visita.
+            </p>
+
+            <ul class="contact-points">
+              <li>
+                <span class="icon">💬</span>
+                <div>
+                  <strong>Resposta mais rapida</strong>
+                  <p>Converse com a academia sem esperar retorno por outros canais.</p>
+                </div>
+              </li>
+              <li>
+                <span class="icon">🧭</span>
+                <div>
+                  <strong>Plano ideal</strong>
+                  <p>Entenda a melhor opcao para sua rotina, objetivo e frequencia.</p>
+                </div>
+              </li>
+              <li>
+                <span class="icon">✅</span>
+                <div>
+                  <strong>Visita guiada</strong>
+                  <p>Agende um horario para conhecer o espaco e tirar suas duvidas presencialmente.</p>
+                </div>
+              </li>
+            </ul>
+
+            <a class="btn btn-secondary" id="contact-whatsapp" href="https://wa.me/5531993262334" target="_blank" rel="noreferrer">Abrir WhatsApp</a>
+
+            <div class="cta-strip">
+              <strong style="display:block; margin-bottom:10px;">Estrutura pronta para crescer</strong>
+              <p class="mini-text">
+                Essa pagina foi organizada para funcionar bem no desktop e no celular, com captura de leads, painel admin local e atualizacao simples dos principais conteudos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <strong id="footer-name">World Fitness BH</strong>
+      <p id="footer-address">R. Jose Alves, 300 - Jardim dos Comerciarios, Vespasiano - MG, 33200-000</p>
+      <p id="footer-phone">(31) 99326-2334</p>
+    </div>
+  </footer>
+
+  <section class="admin-modal" id="admin-modal" hidden aria-labelledby="admin-title" role="dialog" aria-modal="true">
+    <div class="admin-dialog">
+      <div class="admin-head">
+        <div>
+          <span class="eyebrow">Painel administrativo</span>
+          <h2 id="admin-title">Gerenciar site da academia</h2>
+          <p>Atualize os textos principais, planos, diferenciais, avaliacoes e acompanhe os contatos recebidos.</p>
+        </div>
+        <button class="btn btn-secondary" id="close-admin" type="button">Fechar</button>
+      </div>
+
+      <div class="login-shell" id="login-shell">
+        <div class="panel">
+          <div class="login-badge">🔐</div>
+          <h3>Entrar no admin</h3>
+          <p class="mini-text">Login de demonstracao: <strong>admin</strong> / <strong>1234</strong></p>
+
+          <form id="login-form" class="field-grid" style="text-align:left;">
+            <div class="field">
+              <label for="login-user">Usuario</label>
+              <input id="login-user" name="user" type="text" placeholder="Digite o usuario" required />
+            </div>
+            <div class="field">
+              <label for="login-pass">Senha</label>
+              <input id="login-pass" name="pass" type="password" placeholder="Digite a senha" required />
+            </div>
+            <button class="btn btn-primary" type="submit">Entrar</button>
+          </form>
+          <div id="login-message" aria-live="polite"></div>
+        </div>
+      </div>
+
+      <div id="dashboard-shell" hidden>
+        <div class="toolbar">
+          <input class="search-input" id="lead-search" type="search" placeholder="Buscar lead por nome, telefone ou objetivo" />
+          <div class="toolbar-actions">
+            <button class="btn-ghost" id="export-data" type="button">Exportar dados</button>
+            <button class="btn-ghost" id="reset-data" type="button">Restaurar padrao</button>
+            <button class="btn btn-secondary" id="logout-admin" type="button">Sair</button>
+          </div>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="panel span-8">
+            <div class="panel-header">
+              <h4>Informacoes principais</h4>
+              <span class="tag">Salvamento automatico ativo</span>
+            </div>
+
+            <form id="academy-form" class="stack">
+              <div class="inline-grid">
+                <div class="field">
+                  <label for="academy-name">Nome da academia</label>
+                  <input id="academy-name" name="name" type="text" />
+                </div>
+                <div class="field">
+                  <label for="academy-phone-input">Telefone</label>
+                  <input id="academy-phone-input" name="phone" type="text" />
+                </div>
+                <div class="field">
+                  <label for="academy-whatsapp">WhatsApp com DDI</label>
+                  <input id="academy-whatsapp" name="whatsapp" type="text" />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="academy-address-input">Endereco</label>
+                <input id="academy-address-input" name="address" type="text" />
+              </div>
+
+              <div class="inline-grid">
+                <div class="field">
+                  <label for="academy-rating">Nota</label>
+                  <input id="academy-rating" name="rating" type="text" />
+                </div>
+                <div class="field">
+                  <label for="academy-reviews">Quantidade de avaliacoes</label>
+                  <input id="academy-reviews" name="reviewsCount" type="number" min="0" />
+                </div>
+                <div class="field">
+                  <label for="academy-status-input">Horario/status</label>
+                  <input id="academy-status-input" name="openStatus" type="text" />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="academy-hero-title">Titulo principal</label>
+                <textarea id="academy-hero-title" name="heroTitle"></textarea>
+              </div>
+
+              <div class="field">
+                <label for="academy-hero-subtitle">Subtitulo principal</label>
+                <textarea id="academy-hero-subtitle" name="heroSubtitle"></textarea>
+              </div>
+
+              <div class="field">
+                <label for="academy-about">Sobre a academia</label>
+                <textarea id="academy-about" name="about"></textarea>
+              </div>
+
+              <div class="field">
+                <label for="academy-cta">Texto do botao</label>
+                <input id="academy-cta" name="ctaText" type="text" />
+              </div>
+            </form>
+          </div>
+
+          <div class="panel span-4">
+            <div class="panel-header">
+              <h4>Diferenciais</h4>
+            </div>
+            <form id="feature-form" class="stack">
+              <div class="field">
+                <label for="new-feature">Novo diferencial</label>
+                <input id="new-feature" name="feature" type="text" placeholder="Ex: Ambiente climatizado" />
+              </div>
+              <button class="btn btn-primary" type="submit">Adicionar diferencial</button>
+            </form>
+            <div class="stack" id="feature-list-admin" style="margin-top:18px;"></div>
+          </div>
+
+          <div class="panel span-7">
+            <div class="panel-header">
+              <h4>Planos</h4>
+            </div>
+            <form id="plan-form" class="stack">
+              <div class="inline-grid">
+                <div class="field">
+                  <label for="plan-name">Nome do plano</label>
+                  <input id="plan-name" name="name" type="text" />
+                </div>
+                <div class="field">
+                  <label for="plan-price">Preco</label>
+                  <input id="plan-price" name="price" type="text" />
+                </div>
+                <div class="field">
+                  <label for="plan-highlight">Destaque</label>
+                  <select id="plan-highlight" name="highlight">
+                    <option value="false">Nao</option>
+                    <option value="true">Sim</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label for="plan-desc">Descricao</label>
+                <textarea id="plan-desc" name="desc"></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit">Adicionar plano</button>
+            </form>
+            <div class="stack" id="plan-list-admin" style="margin-top:18px;"></div>
+          </div>
+
+          <div class="panel span-5">
+            <div class="panel-header">
+              <h4>Avaliacoes</h4>
+            </div>
+            <form id="testimonial-form" class="stack">
+              <div class="field">
+                <label for="testimonial-name">Nome</label>
+                <input id="testimonial-name" name="name" type="text" />
+              </div>
+              <div class="field">
+                <label for="testimonial-text">Comentario</label>
+                <textarea id="testimonial-text" name="text"></textarea>
+              </div>
+              <div class="inline-grid">
+                <div class="field">
+                  <label for="testimonial-stars">Estrelas</label>
+                  <input id="testimonial-stars" name="stars" type="number" min="1" max="5" value="5" />
+                </div>
+                <div class="field">
+                  <label for="testimonial-when">Quando</label>
+                  <input id="testimonial-when" name="when" type="text" value="agora" />
+                </div>
+              </div>
+              <button class="btn btn-primary" type="submit">Adicionar avaliacao</button>
+            </form>
+            <div class="stack" id="testimonial-list-admin" style="margin-top:18px;"></div>
+          </div>
+
+          <div class="panel span-12">
+            <div class="panel-header">
+              <h4>Leads recebidos</h4>
+              <span class="tag" id="lead-count-tag">0 contatos</span>
+            </div>
+            <div id="lead-list-admin"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const defaultData = {
+      academy: {
+        name: "Academia World Fitness BH",
+        rating: "4,6",
+        reviewsCount: 156,
+        address: "R. Jose Alves, 300 - Jardim dos Comerciarios, Vespasiano - MG, 33200-000",
+        phone: "(31) 99326-2334",
+        openStatus: "Aberto • Fecha 23:00",
+        whatsapp: "5531993262334",
+        heroTitle: "A academia certa para seu foco, sua saude e sua evolucao.",
+        heroSubtitle:
+          "Treine em um ambiente acolhedor, com bons profissionais, varios equipamentos e atendimento que faz diferenca no seu resultado.",
+        about:
+          "A World Fitness BH e uma academia voltada para quem quer treinar com seriedade, conforto e motivacao. Nosso espaco foi pensado para oferecer uma rotina mais saudavel, com estrutura funcional, equipamentos e acompanhamento proximo.",
+        ctaText: "Agende sua visita"
+      },
+      plans: [
+        { id: 1, name: "Mensal", price: "R$ 89,90", desc: "Ideal para comecar seu projeto sem burocracia.", highlight: false },
+        { id: 2, name: "Trimestral", price: "R$ 239,90", desc: "Mais economia para manter constancia nos treinos.", highlight: true },
+        { id: 3, name: "Anual", price: "R$ 799,90", desc: "Melhor custo-beneficio para transformar seu corpo e rotina.", highlight: false }
+      ],
+      features: [
+        "Varios equipamentos disponiveis",
+        "Instrutores atenciosos",
+        "Precos acessiveis",
+        "Ambiente saudavel",
+        "Otimo atendimento",
+        "Espaco acolhedor para treinar"
+      ],
+      testimonials: [
+        {
+          id: 1,
+          name: "Lucileide Ramos De Santana",
+          text: "Ambiente saudavel! Varios equipamentos disponiveis!",
+          stars: 5,
+          when: "um mes atras"
+        },
+        {
+          id: 2,
+          name: "Eleo S",
+          text: "Um lugar muito bom para treinar, bons profissionais.",
+          stars: 5,
+          when: "um ano atras"
+        },
+        {
+          id: 3,
+          name: "Cliente World Fitness",
+          text: "Instrutores atenciosos, precos acessiveis e excelente atendimento.",
+          stars: 5,
+          when: "avaliacao destacada"
+        }
+      ],
+      leads: []
+    };
+
+    let data = cloneData(defaultData);
+    let adminLogged = false;
+    let leadSearch = "";
+    let saveTimer = null;
+    let loadErrorShown = false;
+
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+    const openAdminButton = document.getElementById("open-admin");
+    const closeAdminButton = document.getElementById("close-admin");
+    const adminModal = document.getElementById("admin-modal");
+    const loginShell = document.getElementById("login-shell");
+    const dashboardShell = document.getElementById("dashboard-shell");
+    const loginForm = document.getElementById("login-form");
+    const loginMessage = document.getElementById("login-message");
+    const logoutAdminButton = document.getElementById("logout-admin");
+    const exportDataButton = document.getElementById("export-data");
+    const resetDataButton = document.getElementById("reset-data");
+    const leadForm = document.getElementById("lead-form");
+    const leadMessage = document.getElementById("lead-message");
+    const featureForm = document.getElementById("feature-form");
+    const planForm = document.getElementById("plan-form");
+    const testimonialForm = document.getElementById("testimonial-form");
+    const academyForm = document.getElementById("academy-form");
+    const leadSearchInput = document.getElementById("lead-search");
+
+    const featureGrid = document.getElementById("feature-grid");
+    const planGrid = document.getElementById("plan-grid");
+    const testimonialGrid = document.getElementById("testimonial-grid");
+    const statsGrid = document.getElementById("stats-grid");
+    const featureListAdmin = document.getElementById("feature-list-admin");
+    const planListAdmin = document.getElementById("plan-list-admin");
+    const testimonialListAdmin = document.getElementById("testimonial-list-admin");
+    const leadListAdmin = document.getElementById("lead-list-admin");
+    const leadCountTag = document.getElementById("lead-count-tag");
+
+    const staticTargets = {
+      brandName: document.getElementById("brand-name"),
+      heroTitle: document.getElementById("hero-title"),
+      heroSubtitle: document.getElementById("hero-subtitle"),
+      ratingScore: document.getElementById("rating-score"),
+      reviewsCount: document.getElementById("reviews-count"),
+      academyAddress: document.getElementById("academy-address"),
+      academyPhone: document.getElementById("academy-phone"),
+      academyStatus: document.getElementById("academy-status"),
+      aboutText: document.getElementById("about-text"),
+      heroCta: document.getElementById("hero-cta"),
+      headerWhatsapp: document.getElementById("header-whatsapp"),
+      contactWhatsapp: document.getElementById("contact-whatsapp"),
+      footerName: document.getElementById("footer-name"),
+      footerAddress: document.getElementById("footer-address"),
+      footerPhone: document.getElementById("footer-phone")
+    };
+
+    function cloneData(value) {
+      return JSON.parse(JSON.stringify(value));
+    }
+
+    function mergeData(saved) {
+      const merged = cloneData(defaultData);
+
+      if (saved && typeof saved === "object") {
+        if (saved.academy && typeof saved.academy === "object") {
+          merged.academy = Object.assign({}, merged.academy, saved.academy);
+        }
+        if (Array.isArray(saved.plans)) merged.plans = saved.plans;
+        if (Array.isArray(saved.features)) merged.features = saved.features;
+        if (Array.isArray(saved.testimonials)) merged.testimonials = saved.testimonials;
+        if (Array.isArray(saved.leads)) merged.leads = saved.leads;
+      }
+
+      return merged;
+    }
+
+    async function fetchJson(url, options) {
+      const response = await fetch(
+        url,
+        Object.assign(
+          {
+            credentials: "same-origin",
+            headers: { "Content-Type": "application/json" }
+          },
+          options || {}
+        )
+      );
+
+      const text = await response.text();
+      const payload = text ? JSON.parse(text) : {};
+
+      if (!response.ok) {
+        throw new Error(payload.error || "Erro inesperado na comunicacao com o servidor.");
+      }
+
+      return payload;
+    }
+
+    function setMessage(target, text, type) {
+      target.innerHTML = text
+        ? '<div class="message ' + type + '">' + text + "</div>"
+        : "";
+    }
+
+    function getWhatsAppUrl(text) {
+      return "https://wa.me/" + data.academy.whatsapp + (text ? "?text=" + encodeURIComponent(text) : "");
+    }
+
+    function getContentPayload() {
+      return {
+        academy: data.academy,
+        plans: data.plans,
+        features: data.features,
+        testimonials: data.testimonials
+      };
+    }
+
+    function renderStaticContent() {
+      document.title = data.academy.name + " | Academia em Vespasiano";
+      staticTargets.brandName.textContent = data.academy.name;
+      staticTargets.heroTitle.textContent = data.academy.heroTitle;
+      staticTargets.heroSubtitle.textContent = data.academy.heroSubtitle;
+      staticTargets.ratingScore.textContent = data.academy.rating;
+      staticTargets.reviewsCount.textContent = String(data.academy.reviewsCount);
+      staticTargets.academyAddress.textContent = data.academy.address;
+      staticTargets.academyPhone.textContent = data.academy.phone;
+      staticTargets.academyStatus.textContent = data.academy.openStatus;
+      staticTargets.aboutText.textContent = data.academy.about;
+      staticTargets.heroCta.textContent = data.academy.ctaText;
+      staticTargets.footerName.textContent = data.academy.name;
+      staticTargets.footerAddress.textContent = data.academy.address;
+      staticTargets.footerPhone.textContent = data.academy.phone;
+
+      staticTargets.heroCta.href = getWhatsAppUrl("Ola! Quero agendar uma visita na " + data.academy.name + ".");
+      staticTargets.headerWhatsapp.href = getWhatsAppUrl();
+      staticTargets.contactWhatsapp.href = getWhatsAppUrl("Ola! Quero mais informacoes sobre planos e horarios.");
+    }
+
+    function renderStats() {
+      const stats = [
+        { icon: "⭐", label: "Avaliacao", value: data.academy.rating + " estrelas" },
+        { icon: "👥", label: "Avaliacoes", value: data.academy.reviewsCount + " no Google" },
+        { icon: "🛡", label: "Atendimento", value: "Foco no aluno" }
+      ];
+
+      statsGrid.innerHTML = stats
+        .map(function (item) {
+          return [
+            '<article class="stat-card">',
+            '<div class="feature-icon">' + item.icon + "</div>",
+            "<span class=\"mini-text\">" + item.label + "</span>",
+            "<strong>" + item.value + "</strong>",
+            "</article>"
+          ].join("");
+        })
+        .join("");
+    }
+
+    function renderFeatures() {
+      featureGrid.innerHTML = data.features
+        .map(function (feature) {
+          return [
+            '<article class="feature-card">',
+            '<div class="feature-icon">🏋</div>',
+            "<strong style=\"display:block; margin-bottom:10px; font-size:1.08rem;\">" + escapeHtml(feature) + "</strong>",
+            '<p>Um diferencial que ajuda a tornar o treino mais confortavel, pratico e motivador.</p>',
+            "</article>"
+          ].join("");
+        })
+        .join("");
+    }
+
+    function renderPlans() {
+      planGrid.innerHTML = data.plans
+        .map(function (plan) {
+          return [
+            '<article class="plan-card ' + (plan.highlight ? "popular" : "") + '">',
+            plan.highlight ? '<span class="badge">Mais procurado</span>' : '<span class="badge">Plano</span>',
+            "<h3>" + escapeHtml(plan.name) + "</h3>",
+            '<div class="price">' + escapeHtml(plan.price) + "</div>",
+            "<p style=\"margin-top:14px; min-height:78px;\">" + escapeHtml(plan.desc) + "</p>",
+            '<ul class="feature-list">',
+            "<li>Acesso ao ambiente principal da academia</li>",
+            "<li>Atendimento acolhedor e acompanhamento</li>",
+            "<li>Opcao pratica para sua rotina</li>",
+            "</ul>",
+            '<a class="btn btn-secondary" href="' + getWhatsAppUrl("Ola! Quero saber mais sobre o plano " + plan.name + ".") + '" target="_blank" rel="noreferrer">Matricular agora</a>',
+            "</article>"
+          ].join("");
+        })
+        .join("");
+    }
+
+    function renderTestimonials() {
+      testimonialGrid.innerHTML = data.testimonials
+        .map(function (item) {
+          return [
+            '<article class="testimonial-card">',
+            '<div class="testimonial-meta">',
+            "<div><strong>" + escapeHtml(item.name) + "</strong><span class=\"mini-text\">" + escapeHtml(item.when) + "</span></div>",
+            '<div class="stars" aria-label="' + item.stars + ' estrelas">' + "★".repeat(Math.max(1, Math.min(5, Number(item.stars) || 5))) + "</div>",
+            "</div>",
+            "<p>“" + escapeHtml(item.text) + "”</p>",
+            "</article>"
+          ].join("");
+        })
+        .join("");
+    }
+
+    function renderAdminLists() {
+      featureListAdmin.innerHTML = data.features.length
+        ? data.features
+            .map(function (feature, index) {
+              return [
+                '<div class="list-item">',
+                "<div><strong>Diferencial</strong><p>" + escapeHtml(feature) + "</p></div>",
+                '<div class="list-actions">',
+                '<button class="icon-btn danger" type="button" data-remove-feature="' + index + '" aria-label="Remover diferencial">🗑</button>',
+                "</div>",
+                "</div>"
+              ].join("");
+            })
+            .join("")
+        : '<p class="empty-state">Nenhum diferencial cadastrado.</p>';
+
+      planListAdmin.innerHTML = data.plans.length
+        ? data.plans
+            .map(function (plan) {
+              return [
+                '<div class="list-item">',
+                "<div><strong>" + escapeHtml(plan.name) + " • " + escapeHtml(plan.price) + "</strong><p>" + escapeHtml(plan.desc) + "</p><div class=\"tag-row\">",
+                '<span class="tag">' + (plan.highlight ? "Plano em destaque" : "Plano padrao") + "</span>",
+                "</div></div>",
+                '<div class="list-actions">',
+                '<button class="icon-btn danger" type="button" data-remove-plan="' + plan.id + '" aria-label="Remover plano">🗑</button>',
+                "</div>",
+                "</div>"
+              ].join("");
+            })
+            .join("")
+        : '<p class="empty-state">Nenhum plano cadastrado.</p>';
+
+      testimonialListAdmin.innerHTML = data.testimonials.length
+        ? data.testimonials
+            .map(function (item) {
+              return [
+                '<div class="list-item">',
+                "<div><strong>" + escapeHtml(item.name) + "</strong><p>" + escapeHtml(item.text) + "</p><div class=\"tag-row\"><span class=\"tag\">" + escapeHtml(item.when) + "</span><span class=\"tag\">" + item.stars + " estrelas</span></div></div>",
+                '<div class="list-actions">',
+                '<button class="icon-btn danger" type="button" data-remove-testimonial="' + item.id + '" aria-label="Remover avaliacao">🗑</button>',
+                "</div>",
+                "</div>"
+              ].join("");
+            })
+            .join("")
+        : '<p class="empty-state">Nenhuma avaliacao cadastrada.</p>';
+
+      renderLeads();
+    }
+
+    function renderLeads() {
+      const filteredLeads = data.leads.filter(function (lead) {
+        if (!leadSearch) return true;
+        const bucket = [lead.name, lead.phone, lead.goal].join(" ").toLowerCase();
+        return bucket.includes(leadSearch);
+      });
+
+      leadCountTag.textContent = filteredLeads.length + (filteredLeads.length === 1 ? " contato" : " contatos");
+
+      leadListAdmin.innerHTML = filteredLeads.length
+        ? '<div class="lead-grid">' +
+          filteredLeads
+            .map(function (lead) {
+              return [
+                '<article class="lead-card">',
+                "<strong>" + escapeHtml(lead.name) + "</strong>",
+                "<p>" + escapeHtml(lead.phone) + "</p>",
+                "<p style=\"margin-top:12px;\">" + escapeHtml(lead.goal || "Sem objetivo informado") + "</p>",
+                '<div class="tag-row"><span class="tag">' + escapeHtml(lead.createdAt || "Data nao informada") + "</span></div>",
+                '<p class="meta">Origem: formulario do site</p>',
+                "</article>"
+              ].join("");
+            })
+            .join("") +
+          "</div>"
+        : '<p class="empty-state">Nenhum lead encontrado com esse filtro.</p>';
+    }
+
+    function syncAcademyForm() {
+      academyForm.elements.name.value = data.academy.name;
+      academyForm.elements.phone.value = data.academy.phone;
+      academyForm.elements.whatsapp.value = data.academy.whatsapp;
+      academyForm.elements.address.value = data.academy.address;
+      academyForm.elements.rating.value = data.academy.rating;
+      academyForm.elements.reviewsCount.value = data.academy.reviewsCount;
+      academyForm.elements.openStatus.value = data.academy.openStatus;
+      academyForm.elements.heroTitle.value = data.academy.heroTitle;
+      academyForm.elements.heroSubtitle.value = data.academy.heroSubtitle;
+      academyForm.elements.about.value = data.academy.about;
+      academyForm.elements.ctaText.value = data.academy.ctaText;
+    }
+
+    function renderAll() {
+      renderStaticContent();
+      renderStats();
+      renderFeatures();
+      renderPlans();
+      renderTestimonials();
+      renderAdminLists();
+      syncAcademyForm();
+    }
+
+    function updateLocalData(nextData) {
+      data = mergeData(nextData);
+      renderAll();
+    }
+
+    function openAdmin() {
+      adminModal.hidden = false;
+      document.body.style.overflow = "hidden";
+      updateAdminView();
+      if (adminLogged) {
+        refreshAdminData(true);
+      }
+    }
+
+    function closeAdmin() {
+      adminModal.hidden = true;
+      document.body.style.overflow = "";
+    }
+
+    function updateAdminView() {
+      loginShell.hidden = adminLogged;
+      dashboardShell.hidden = !adminLogged;
+      if (!adminLogged) {
+        setMessage(loginMessage, "", "success");
+      } else {
+        syncAcademyForm();
+        renderAdminLists();
+      }
+    }
+
+    async function refreshPublicData() {
+      const payload = await fetchJson("/api/public-data", { method: "GET" });
+      updateLocalData(payload);
+    }
+
+    async function refreshAdminData(silent) {
+      try {
+        const payload = await fetchJson("/api/admin/data", { method: "GET" });
+        updateLocalData(payload);
+      } catch (error) {
+        if (silent) return;
+        setMessage(loginMessage, error.message, "error");
+      }
+    }
+
+    async function refreshSession() {
+      try {
+        const session = await fetchJson("/api/admin/session", { method: "GET" });
+        adminLogged = Boolean(session.logged);
+        updateAdminView();
+      } catch (error) {
+        adminLogged = false;
+        updateAdminView();
+      }
+    }
+
+    function queueSave() {
+      if (!adminLogged) return;
+      if (saveTimer) window.clearTimeout(saveTimer);
+      saveTimer = window.setTimeout(async function () {
+        try {
+          const payload = await fetchJson("/api/admin/save", {
+            method: "POST",
+            body: JSON.stringify(getContentPayload())
+          });
+          updateLocalData(payload);
+        } catch (error) {
+          if (!loadErrorShown) {
+            loadErrorShown = true;
+            window.alert("Nao foi possivel salvar no servidor: " + error.message);
+          }
+        }
+      }, 450);
+    }
+
+    function exportData() {
+      window.open("/api/admin/export", "_blank", "noopener,noreferrer");
+    }
+
+    function sanitizePhone(value) {
+      return value.replace(/[^\d()+\-\s]/g, "").trim();
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("is-open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+    });
+
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    openAdminButton.addEventListener("click", openAdmin);
+    closeAdminButton.addEventListener("click", closeAdmin);
+
+    adminModal.addEventListener("click", function (event) {
+      if (event.target === adminModal) closeAdmin();
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && !adminModal.hidden) closeAdmin();
+    });
+
+    loginForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      const formData = new FormData(loginForm);
+      const user = String(formData.get("user") || "").trim();
+      const pass = String(formData.get("pass") || "").trim();
+
+      try {
+        await fetchJson("/api/admin/login", {
+          method: "POST",
+          body: JSON.stringify({ user: user, pass: pass })
+        });
+        adminLogged = true;
+        loginForm.reset();
+        setMessage(loginMessage, "", "success");
+        updateAdminView();
+        await refreshAdminData(false);
+      } catch (error) {
+        adminLogged = false;
+        updateAdminView();
+        setMessage(loginMessage, error.message, "error");
+      }
+    });
+
+    logoutAdminButton.addEventListener("click", async function () {
+      try {
+        await fetchJson("/api/admin/logout", { method: "POST", body: JSON.stringify({}) });
+      } catch (error) {
+      }
+      adminLogged = false;
+      updateAdminView();
+    });
+
+    exportDataButton.addEventListener("click", exportData);
+
+    resetDataButton.addEventListener("click", async function () {
+      const confirmed = window.confirm("Deseja restaurar o conteudo padrao do site? Os dados salvos no servidor serao substituidos.");
+      if (!confirmed) return;
+
+      try {
+        const payload = await fetchJson("/api/admin/reset", {
+          method: "POST",
+          body: JSON.stringify({})
+        });
+        leadSearch = "";
+        leadSearchInput.value = "";
+        updateLocalData(payload);
+      } catch (error) {
+        window.alert(error.message);
+      }
+    });
+
+    leadForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      const formData = new FormData(leadForm);
+      const name = String(formData.get("name") || "").trim();
+      const phone = sanitizePhone(String(formData.get("phone") || ""));
+      const goal = String(formData.get("goal") || "").trim();
+
+      if (!name || !phone) {
+        setMessage(leadMessage, "Preencha pelo menos nome e WhatsApp para enviar seu contato.", "error");
+        return;
+      }
+
+      try {
+        const response = await fetchJson("/api/leads", {
+          method: "POST",
+          body: JSON.stringify({ name: name, phone: phone, goal: goal })
+        });
+
+        data.leads.unshift(response.lead);
+        renderAdminLists();
+        leadForm.reset();
+        setMessage(leadMessage, "Recebemos seus dados. Em breve entraremos em contato.", "success");
+
+        const text = [
+          "Ola! Vim pelo site da " + data.academy.name + ".",
+          "",
+          "Nome: " + name,
+          "WhatsApp: " + phone,
+          "Objetivo: " + (goal || "Nao informado")
+        ].join("\n");
+
+        window.setTimeout(function () {
+          window.open(getWhatsAppUrl(text), "_blank", "noopener,noreferrer");
+        }, 250);
+      } catch (error) {
+        setMessage(leadMessage, error.message, "error");
+      }
+    });
+
+    academyForm.addEventListener("input", function (event) {
+      const field = event.target.name;
+      if (!field) return;
+      let value = event.target.value;
+      if (field === "reviewsCount") {
+        value = Number(value || 0);
+      }
+      data.academy[field] = value;
+      renderAll();
+      queueSave();
+    });
+
+    featureForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const feature = String(new FormData(featureForm).get("feature") || "").trim();
+      if (!feature) return;
+      data.features.push(feature);
+      renderAll();
+      queueSave();
+      featureForm.reset();
+    });
+
+    planForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const formData = new FormData(planForm);
+      const name = String(formData.get("name") || "").trim();
+      const price = String(formData.get("price") || "").trim();
+      const desc = String(formData.get("desc") || "").trim();
+      const highlight = String(formData.get("highlight")) === "true";
+
+      if (!name || !price) return;
+
+      data.plans.push({
+        id: Date.now(),
+        name: name,
+        price: price,
+        desc: desc,
+        highlight: highlight
+      });
+
+      renderAll();
+      queueSave();
+      planForm.reset();
+      planForm.elements.highlight.value = "false";
+    });
+
+    testimonialForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const formData = new FormData(testimonialForm);
+      const name = String(formData.get("name") || "").trim();
+      const text = String(formData.get("text") || "").trim();
+      const stars = Math.max(1, Math.min(5, Number(formData.get("stars") || 5)));
+      const when = String(formData.get("when") || "").trim() || "agora";
+
+      if (!name || !text) return;
+
+      data.testimonials.push({
+        id: Date.now(),
+        name: name,
+        text: text,
+        stars: stars,
+        when: when
+      });
+
+      renderAll();
+      queueSave();
+      testimonialForm.reset();
+      testimonialForm.elements.stars.value = "5";
+      testimonialForm.elements.when.value = "agora";
+    });
+
+    document.addEventListener("click", function (event) {
+      const featureIndex = event.target.closest("[data-remove-feature]");
+      const planButton = event.target.closest("[data-remove-plan]");
+      const testimonialButton = event.target.closest("[data-remove-testimonial]");
+
+      if (featureIndex) {
+        data.features.splice(Number(featureIndex.dataset.removeFeature), 1);
+        renderAll();
+        queueSave();
+      }
+
+      if (planButton) {
+        data.plans = data.plans.filter(function (plan) {
+          return String(plan.id) !== planButton.dataset.removePlan;
+        });
+        renderAll();
+        queueSave();
+      }
+
+      if (testimonialButton) {
+        data.testimonials = data.testimonials.filter(function (item) {
+          return String(item.id) !== testimonialButton.dataset.removeTestimonial;
+        });
+        renderAll();
+        queueSave();
+      }
+    });
+
+    leadSearchInput.addEventListener("input", function () {
+      leadSearch = leadSearchInput.value.trim().toLowerCase();
+      renderLeads();
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 820) {
+        navLinks.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    async function bootstrap() {
+      try {
+        await refreshPublicData();
+      } catch (error) {
+        setMessage(leadMessage, "Nao foi possivel carregar os dados do servidor. Execute o backend em Python para usar a versao completa.", "error");
+      }
+
+      await refreshSession();
+      renderAll();
+    }
+
+    bootstrap();
+  </script>
+</body>
+</html>
